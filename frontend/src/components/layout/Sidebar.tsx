@@ -11,7 +11,8 @@ import {
   Calendar, 
   BarChart,
   LogOut,
-  Settings
+  Settings,
+  X
 } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 
@@ -26,13 +27,20 @@ const navItems = [
   { icon: Settings, label: 'Settings', href: '/settings' },
 ];
 
-export const Sidebar = () => {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export const Sidebar = ({ isOpen = false, onClose }: SidebarProps) => {
   const pathname = usePathname();
   const { user, logout } = useStore();
 
   return (
     <aside 
-      className="h-screen w-65 bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col justify-between fixed top-0 left-0 z-50 text-white transition-all duration-300"
+      className={`h-screen w-65 bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col justify-between fixed top-0 left-0 z-50 text-white transition-all duration-300
+        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+      `}
     >
       <div>
         <div className="h-16 flex items-center justify-between px-4 border-b border-[#2A2A2A]">
@@ -40,13 +48,22 @@ export const Sidebar = () => {
             <span className="font-bold text-lg tracking-tight">StudyGenie AI</span>
             <span className="text-[10px] text-gray-400">Learn Smarter, Not Harder</span>
           </div>
+          {onClose && (
+            <button 
+              onClick={onClose}
+              className="md:hidden text-gray-400 hover:text-white p-1.5 rounded-lg hover:bg-white/5 transition-all"
+              aria-label="Close menu"
+            >
+              <X size={18} />
+            </button>
+          )}
         </div>
 
         <nav className="p-4 space-y-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link key={item.href} href={item.href}>
+              <Link key={item.href} href={item.href} onClick={onClose}>
                 <div className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 cursor-pointer
                   ${isActive ? 'bg-white text-black shadow-sm' : 'text-gray-400 hover:bg-[#111111] hover:text-gray-200'}
                 `}>
