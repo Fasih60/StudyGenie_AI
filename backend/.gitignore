@@ -1,0 +1,53 @@
+# Git Ignore File
+
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Runtime Data
+pids/
+*.pid
+*.seed
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploaded Files (but keep the directory)
+uploads/*
+!uploads/.gitkeep
+
+# Build
+dist/
+build/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# System Files
+.env.example.local
+.env.test.local
+.env

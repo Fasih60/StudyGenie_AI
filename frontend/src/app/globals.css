@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* 
+  =========================================
+  STUDYGENIE AI - PREMIUM LIGHT DESIGN SYSTEM
+  Ice Silver Background & Violet-Blue Gradient Accents
+  =========================================
+*/
+
+/* Theme variables are defined in :root instead of an unknown @theme rule */
+
+:root {
+  --background: #E6ECF2;
+  --foreground: #0F172A;
+  --card: rgba(255, 255, 255, 0.65);
+  --card-foreground: #0F172A;
+  --border: #D6DEE8;
+  --muted: #F8FAFC;
+  --muted-foreground: #475569;
+  --primary: #7C3AED;
+  --primary-foreground: #FFFFFF;
+  --secondary: #3B82F6;
+  --secondary-foreground: #FFFFFF;
+  
+  /* Accent Colors */
+  --accent-violet: #7C3AED;
+  --accent-blue: #3B82F6;
+  --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
+}
+
+@layer base {
+  html, body {
+    background-color: #E6ECF2 !important;
+    background-image: none !important;
+    color: #0F172A !important;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(124, 58, 237, 0.15) !important;
+    color: #7C3AED !important;
+  }
+}
+
+/* 
+  =========================================
+  DARK-TO-LIGHT CONVERSION WRAPPERS (SAAS)
+  =========================================
+*/
+
+/* Deep backgrounds converted to Ice Silver */
+.bg-\[\#050505\],
+.bg-\[\#0A0A0A\],
+.bg-\[\#0a0a0a\],
+.bg-\[\#0d0d0d\],
+.bg-\[\#0e0e0e\],
+.bg-\[\#070707\]\/30,
+.bg-black {
+  background-color: #E6ECF2 !important;
+  background-image: none !important;
+  color: #0F172A !important;
+}
+
+/* 
+  =========================================
+  GLASSMORPHISM CARD STYLING & FLOATING EFFECTS
+  =========================================
+*/
+.bg-\[\#111111\],
+.bg-\[\#111111\]\/80,
+.bg-card,
+.rounded-xl.border,
+.rounded-2xl.border,
+.rounded-3xl.border,
+.bg-\[\#0b0b0b\] {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05), 
+              0 1px 3px rgba(15, 23, 42, 0.02) !important;
+  border-radius: 1.5rem !important; /* rounded-3xl */
+  color: #0F172A !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Floating Card Effects on Hover */
+.bg-\[\#111111\]:hover,
+.bg-\[\#111111\]\/80:hover,
+.bg-card:hover,
+.rounded-xl.border:hover,
+.rounded-2xl.border:hover,
+.rounded-3xl.border:hover,
+.bg-\[\#0b0b0b\]:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12),
+              0 0 20px rgba(124, 58, 237, 0.04) !important;
+  border-color: rgba(124, 58, 237, 0.25) !important;
+}
+
+/* Inner containers or darker panels become clean translucent white */
+.bg-\[\#1E1E1E\],
+.bg-\[\#1e1e1e\],
+.bg-\[rgba\(255\,255\,255\,0\.05\)\] {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  color: #0F172A !important;
+}
+
+/* 
+  =========================================
+  NAVIGATION & SIDEBAR STYLING
+  =========================================
+*/
+aside, 
+.bg-\[\#0A0A0A\].border-r, 
+aside.h-screen {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 4px 0 30px rgba(15, 23, 42, 0.02) !important;
+  color: #0F172A !important;
+}
+
+aside span, 
+aside h3, 
+aside svg, 
+aside button {
+  color: #0F172A !important;
+}
+
+/* Sidebar profile card */
+aside div.border-t .bg-\[\#111111\],
+aside div.border-t .bg-\[\#111111\].border {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid #D6DEE8 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Sidebar items list */
+aside nav a div,
+aside nav div {
+  color: #475569 !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+aside nav a div:hover,
+aside nav div:hover {
+  background-color: rgba(124, 58, 237, 0.06) !important;
+  color: #7C3AED !important;
+}
+
+/* Active navigation item - brand gradient glow */
+aside nav div.bg-\[\#1E1E1E\], 
+aside nav div.bg-\[rgba\(255\,255\,255\,0\.05\)\],
+aside nav div.shadow-\[0_0_10px_rgba\(255\,255\,255\,0\.05\)\] {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25) !important;
+  border: none !important;
+}
+
+aside nav div.bg-\[\#1E1E1E\] svg, 
+aside nav div.bg-\[\#1E1E1E\] span,
+aside nav div.bg-\[rgba\(255\,255\,255\,0\.05\)\] svg,
+aside nav div.bg-\[rgba\(255\,255\,255\,0\.05\)\] span {
+  color: #FFFFFF !important;
+}
+
+/* Header/Navbar light blur style */
+header {
+  background-color: rgba(230, 236, 242, 0.75) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02) !important;
+}
+
+/* 
+  =========================================
+  PREMIUM TEXT & TYPOGRAPHY STYLE OVERRIDES
+  =========================================
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #0F172A !important;
+}
+
+.text-white,
+.text-gray-100,
+.text-gray-200,
+.text-gray-300,
+.text-slate-100,
+.text-slate-200,
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+span.text-white,
+div.text-white {
+  color: #0F172A !important;
+}
+
+.text-gray-400,
+.text-gray-500,
+.text-slate-400,
+.text-slate-500,
+p.text-gray-400,
+p.text-gray-500,
+span.text-gray-400,
+span.text-gray-500 {
+  color: #475569 !important;
+}
+
+/* Landing Page title and specific headings - Main Brand Gradient */
+.bg-gradient-to-r.from-purple-400.via-indigo-400.to-pink-500,
+.bg-gradient-to-r.from-white.via-gray-200.to-gray-400,
+.from-purple-400,
+.from-white {
+  background-image: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  font-weight: 800 !important;
+}
+
+/* 
+  =========================================
+  INTERACTIVE BUTTONS & DYNAMIC GLOWS
+  =========================================
+*/
+
+/* Gradient Buttons (Primary) */
+button.bg-white,
+a.bg-white,
+.bg-white.text-black,
+button.bg-white\/80,
+button.bg-gradient-to-r,
+.bg-gradient-to-tr,
+.bg-gradient-to-r.from-purple-600.to-indigo-600,
+button.bg-primary {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  border-radius: 1rem !important; /* rounded-2xl */
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button.bg-white:hover,
+a.bg-white:hover,
+.bg-white.text-black:hover,
+button.bg-white\/80:hover,
+button.bg-gradient-to-r:hover,
+.bg-gradient-to-tr:hover,
+.bg-gradient-to-r.from-purple-600.to-indigo-600:hover,
+button.bg-primary:hover {
+  transform: scale(1.03) translateY(-1px) !important;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4) !important;
+  filter: brightness(1.05) !important;
+}
+
+button.bg-white:active,
+a.bg-white:active,
+.bg-white.text-black:active,
+button.bg-primary:active {
+  transform: scale(0.98) !important;
+}
+
+/* Secondary / Glass Buttons */
+button.bg-white\/10,
+button.bg-white\/5,
+a.bg-white\/5,
+a.border-white\/10,
+button.border-white\/10,
+button.border-\[\#2A2A2A\],
+.border-white\/10,
+.border-\[\#2A2A2A\],
+button.bg-secondary,
+button.bg-\[\#1E1E1E\] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid #D6DEE8 !important;
+  color: #0F172A !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button.bg-white\/10:hover,
+button.bg-white\/5:hover,
+a.bg-white\/5:hover,
+button.border-\[\#2A2A2A\]:hover,
+button.bg-secondary:hover,
+button.bg-\[\#1E1E1E\]:hover {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  color: #7C3AED !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* 
+  =========================================
+  BACKGROUND ORBS & GRID OVERRIDES
+  =========================================
+*/
+.bg-\[radial-gradient\(ellipse_at_top\__var\(--tw-gradient-stops\)\)\] {
+  background-image: radial-gradient(ellipse at top, #E6ECF2 0%, #E6ECF2 100%) !important;
+}
+
+/* Conversion of dark blurred orbs into premium light orbs */
+.bg-purple-900\/20,
+.bg-indigo-900\/20,
+.bg-pink-900\/10,
+.bg-purple-600\/10 {
+  background-color: rgba(124, 58, 237, 0.12) !important; /* Premium Violet Orb */
+  filter: blur(120px) !important;
+}
+.bg-indigo-900\/20 {
+  background-color: rgba(59, 130, 246, 0.12) !important; /* Premium Blue Orb */
+}
+.bg-pink-900\/10 {
+  background-color: rgba(236, 72, 153, 0.08) !important; /* Premium Pink Orb */
+}
+
+/* Grid Pattern Background - converted to premium soft light silver */
+.bg-\[linear-gradient\(to_right\,\#111111_1px\,transparent_1px\)\,linear-gradient\(to_bottom\,\#111111_1px\,transparent_1px\)\] {
+  background-image: linear-gradient(to right, rgba(214, 222, 232, 0.4) 1px, transparent 1px), 
+                    linear-gradient(to bottom, rgba(214, 222, 232, 0.4) 1px, transparent 1px) !important;
+  opacity: 0.65 !important;
+}
+
+/* Logo and accents */
+.bg-gradient-to-tr.from-purple-600.to-indigo-600,
+.bg-gradient-to-tr.from-purple-600 {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Powering Next-Gen Study badge */
+.border-purple-500\/30 {
+  border-color: rgba(124, 58, 237, 0.25) !important;
+}
+.bg-purple-500\/10 {
+  background-color: rgba(124, 58, 237, 0.08) !important;
+}
+.text-purple-300 {
+  color: #7C3AED !important;
+}
+
+/* AI Strategy highlight container (Subtle Premium background card) */
+div.bg-white.text-black {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.07) 0%, rgba(59, 130, 246, 0.07) 100%) !important;
+  color: #7C3AED !important;
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 8px 20px -5px rgba(124, 58, 237, 0.05) !important;
+}
+div.bg-white.text-black * {
+  color: #7C3AED !important;
+}
+div.bg-white.text-black p {
+  color: #475569 !important;
+}
+
+/* 
+  =========================================
+  CHAT UI PRESETS
+  =========================================
+*/
+
+/* User chat bubble */
+.bg-white.text-black.rounded-2xl,
+.bg-white.text-black.rounded-3xl {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem !important; /* Premium Chat Bubble Style */
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15) !important;
+}
+
+.bg-white.text-black.rounded-2xl *, 
+.bg-white.text-black.rounded-3xl * {
+  color: #FFFFFF !important;
+}
+
+/* AI message bubble */
+.bg-\[\#1E1E1E\].text-gray-200.border,
+.bg-\[\#1e1e1e\].text-gray-200.border,
+.bg-\[\#1E1E1E\].text-gray-200 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  color: #0F172A !important;
+  border-radius: 1.25rem 1.25rem 1.25rem 0.25rem !important; /* Premium Chat Bubble Style */
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02) !important;
+}
+
+.bg-\[\#1E1E1E\].text-gray-200.border *,
+.bg-\[\#1e1e1e\].text-gray-200.border * {
+  color: #0F172A !important;
+}
+
+/* Profile avatars and icons */
+.bg-white.text-black.w-8.h-8 {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  color: #FFFFFF !important;
+}
+.bg-white.text-black.w-8.h-8 * {
+  color: #FFFFFF !important;
+}
+
+/* Chat card background overrides */
+.h-\[calc\(100vh-8rem\)\] .bg-\[\#111111\] {
+  background-color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.h-\[calc\(100vh-8rem\)\] .bg-\[\#0A0A0A\] {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-top: 1px solid rgba(124, 58, 237, 0.1) !important;
+}
+
+/* 
+  =========================================
+  INPUT FIELDS & FORMS STYLING
+  =========================================
+*/
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea, 
+select,
+.bg-\[\#0A0A0A\].border-\[\#2A2A2A\].text-white {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid #D6DEE8 !important;
+  color: #0F172A !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1.25rem !important;
+  box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.02) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+select:focus,
+.bg-\[\#0A0A0A\].border-\[\#2A2A2A\].text-white:focus {
+  border-color: #7C3AED !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1), 
+              inset 0 2px 4px rgba(15, 23, 42, 0.01) !important;
+  outline: none !important;
+}
+
+/* Date picker color scheme fix */
+input[type="date"] {
+  color-scheme: light !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid #D6DEE8 !important;
+  color: #0F172A !important;
+}
+
+/* 
+  =========================================
+  DASHBOARD METRICS & LISTS STYLING
+  =========================================
+*/
+.bg-\[\#0A0A0A\].rounded-lg.border.border-\[\#2A2A2A\],
+.bg-\[\#111111\].border.border-\[\#2A2A2A\].rounded-xl,
+.divide-y.divide-\[\#2A2A2A\] > div {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid #D6DEE8 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02) !important;
+  color: #0F172A !important;
+}
+
+.bg-\[\#0A0A0A\].rounded-lg.border.border-\[\#2A2A2A\] *,
+.bg-\[\#111111\].border.border-\[\#2A2A2A\].rounded-xl * {
+  color: #0F172A !important;
+}
+
+.bg-\[\#0A0A0A\].rounded-lg.border.border-\[\#2A2A2A\] .text-gray-500,
+.bg-\[\#111111\].border.border-\[\#2A2A2A\].rounded-xl .text-gray-500 {
+  color: #475569 !important;
+}
+
+/* Divider colors in schedules */
+.divide-\[\#2A2A2A\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #D6DEE8 !important;
+}
+
+/* Task Activity row hover effect */
+.hover\:bg-\[\#151515\]:hover {
+  background-color: rgba(124, 58, 237, 0.04) !important;
+  color: #7C3AED !important;
+}
+
+/* Planner daily header card */
+.bg-\[\#1E1E1E\].px-4.py-2.border-b.border-\[\#2A2A2A\] {
+  background-color: rgba(124, 58, 237, 0.05) !important;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
+}
+.bg-\[\#1E1E1E\].px-4.py-2.border-b.border-\[\#2A2A2A\] span {
+  color: #7C3AED !important;
+}
+
+/* 
+  =========================================
+  DRAG & DROP ZONE STYLING
+  =========================================
+*/
+.border-2.border-dashed.rounded-xl {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border: 2px dashed #D6DEE8 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.border-2.border-dashed.rounded-xl:hover {
+  border-color: #7C3AED !important;
+  background-color: rgba(124, 58, 237, 0.03) !important;
+  transform: scale(1.005) !important;
+}
+/* Active dragging dragover */
+.border-white.bg-\[\#1E1E1E\] {
+  border-color: #3B82F6 !important;
+  background-color: rgba(59, 130, 246, 0.06) !important;
+}
+
+/* Quiz questions choice list */
+.bg-\[\#0A0A0A\].border-\[\#2A2A2A\].text-gray-300 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  border-color: #D6DEE8 !important;
+  color: #475569 !important;
+}
+
+.bg-\[\#0A0A0A\].border-\[\#2A2A2A\].text-gray-300:hover {
+  background-color: rgba(124, 58, 237, 0.04) !important;
+  border-color: rgba(124, 58, 237, 0.4) !important;
+  color: #7C3AED !important;
+}
+
+/* Correct choice selection */
+.bg-white\/10.border-white.text-white {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.5) !important;
+  color: #15803d !important;
+  font-weight: 600 !important;
+}
+.bg-white\/10.border-white.text-white * {
+  color: #15803d !important;
+}
+
+/* Incorrect choice selection */
+.bg-red-500\/10.border-red-500\/50.text-red-400 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  color: #b91c1c !important;
+}
+.bg-red-500\/10.border-red-500\/50.text-red-400 * {
+  color: #b91c1c !important;
+}
+
+/* Difficulty Button presets */
+button.capitalize {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  color: #475569 !important;
+  border: 1px solid #D6DEE8 !important;
+  border-radius: 0.5rem !important;
+}
+
+button.capitalize:hover {
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  color: #7C3AED !important;
+}
+
+/* Active difficulty level */
+button.capitalize.bg-white.text-black.border-white {
+  background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.2) !important;
+}
+
+/* 
+  =========================================
+  RECHARTS & CHART VISUAL CUSTOMIZER
+  =========================================
+*/
+
+/* Chart bars custom fill colors */
+.recharts-bar-rectangle path,
+.recharts-rectangle {
+  fill: #7C3AED !important;
+  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.2)) !important;
+  rx: 4px;
+}
+
+/* Alternate mastery sector slices beautifully in pie charts */
+.recharts-pie-sector:nth-child(even) {
+  fill: #7C3AED !important;
+}
+
+.recharts-pie-sector:nth-child(odd) {
+  fill: #3B82F6 !important;
+}
+
+.recharts-responsive-container text {
+  fill: #475569 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+}
+
+/* Recharts Tooltips Glassmorphic popup */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 1rem !important;
+  color: #0F172A !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08) !important;
+  padding: 10px 14px !important;
+}
+
+/* Progress bar filling custom gradient */
+div[role="progressbar"] > div {
+  background: linear-gradient(90deg, #7C3AED 0%, #3B82F6 100%) !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4CBD4;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ABB4C0;
+}
+
+/* 
+  =========================================
+  OVERLAPPING INPUT FIX FOR SETTINGS
+  =========================================
+*/
+.relative input[type="text"], 
+.relative input[type="email"], 
+.relative input[type="password"] {
+  padding-left: 2.85rem !important;
+}
+
+.relative input[type="password"] {
+  padding-right: 2.75rem !important;
+}
